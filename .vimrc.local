@@ -1,0 +1,69 @@
+syntax enable
+set nofoldenable
+
+set cursorline
+set cursorcolumn
+
+colorscheme Benokai
+set background=dark
+hi NonText ctermbg=0
+hi Normal ctermbg=0
+hi SignColumn ctermfg=0 ctermbg=0
+hi LineNr ctermbg=0
+let g:solarized_termcolors=256
+let g:jsx_ext_required = 0
+let NERDTreeShowHidden=1
+
+" Mappings ------- {{{
+inoremap jk <esc>
+nnoremap + ddkP
+nnoremap - ddp
+inoremap <c-u> <esc>viwUea
+inoremap <c-v> <c-r>"
+" Open this file in a new pane
+nnoremap <leader>ev :vsplit ~/.vimrc.local<cr>
+" Highlight trailing whitespace
+nnoremap <leader>w :match Error /\v\s+$/<cr>
+nnoremap <leader>W :match Error ""<cr>
+" Always search in very magic mode (ie normal regex)
+nnoremap / /\v
+nnoremap <leader><space> i<space><esc>l
+" Search for current word with silver searcher
+nnoremap <leader>G :Ag<cr>
+" Go to file with name of word under cursor
+command Fg exe "normal \<C-P>" . expand('<cword>')
+
+" Toggle booleans
+nnoremap <leader>! :call ToggleBoolean(expand("<cword>"))<cr>
+
+function! ToggleBoolean(bool)
+  if a:bool ==# 'true'
+    execute "normal! ciwfalse"
+  elseif a:bool ==# 'false'
+    execute "normal! ciwtrue"
+  endif
+endfunction
+" }}}
+" Abbreviations ------- {{{
+iabbrev funciton function
+iabbrev fucniton function
+" " }}}
+" Ruby abbeviations ------- {{{
+augroup filetype_ruby
+  autocmd!
+  autocmd FileType ruby :iabbrev <buffer> debugger binding.pry
+augroup END
+" }}}
+" Vimscript file settings --------- {{{
+augroup filetype_vim
+  autocmd!
+  autocmd FileType vim setlocal foldmethod=marker
+augroup end
+" }}}
+" General -------- {{{
+set noswapfile
+" }}}
+
+set autoread
+au FocusGained,BufEnter * :silent! !
+au BufLeave,FocusLost,WinLeave * :checktime
