@@ -79,7 +79,6 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Example aliases
 
-alias aptible="/usr/local/bin/aptible"
 alias brails="bundle exec rails"
 alias besp="bundle exec rspec" 
 
