@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/bongani/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -71,30 +71,25 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+# Import env
+source ~/.env
+
 # ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias aptible="/usr/local/bin/aptible"
 alias brails="bundle exec rails"
 alias besp="bundle exec rspec" 
 
 alias rubochop="git diff origin/master --name-only | xargs rubocop -a"
 
-alias oz="zshrc"
+alias oz="vim ~/.zshrc && source ~/.zshrc && echo 'Yes! You did it :)'"
 alias ozsource="source ~/.zshrc"
 alias hsplit="osascript -e 'tell application \"System Events\" to key code 2 using {shift down, command down}'"
 alias vsplit="osascript -e 'tell application \"System Events\" to key code 2 using {shift down, command down}'"
 
-alias zshrc="vim ~/.zshrc && source ~/.zshrc && echo ~/.zshrc updated successfully."
+alias zshrc="oz"
 
 alias ngrok="~/ngrok" 
 
@@ -106,5 +101,3 @@ source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Z
 . `brew --prefix`/etc/profile.d/z.sh
-
-## Environment Variables
