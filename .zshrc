@@ -89,7 +89,7 @@ alias besp="bundle exec rspec"
 
 alias rubochop="git diff origin/master --name-only | xargs rubocop -a"
 
-alias oz="vim ~/.zshrc && source ~/.zshrc && echo 'Yes! You did it :)'"
+alias oz="zshrc"
 alias ozsource="source ~/.zshrc"
 alias hsplit="osascript -e 'tell application \"System Events\" to key code 2 using {shift down, command down}'"
 alias vsplit="osascript -e 'tell application \"System Events\" to key code 2 using {shift down, command down}'"
