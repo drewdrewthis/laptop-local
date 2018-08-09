@@ -245,6 +245,7 @@ cask_install_or_upgrade 'slack'
 # cask_install_or_upgrade 'xquartz'
 cask_install_or_upgrade 'visual-studio-code'
 cask_install_or_upgrade '1password'
+cask_install_or_upgrade 'skitch'
 install_shift_it
 install_elasticsearch
 install_latest_ruby

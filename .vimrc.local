@@ -3,10 +3,12 @@ set nofoldenable
 
 set cursorline
 set cursorcolumn
+set gfn=Menlo:h11
 
 colorscheme Benokai
 set background=dark
 hi NonText ctermbg=0
+highlight Normal guibg=black
 hi Normal ctermbg=0
 hi SignColumn ctermfg=0 ctermbg=0
 hi LineNr ctermbg=0

@@ -86,11 +86,11 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>1035 323 606 469 0 0 1920 1177 </string>
+	<string>1035 273 599 519 0 0 1920 1177 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>127 506 918 512 0 0 1920 1177 </string>
+	<string>127 352 918 512 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>849 1050 960 1057 -111 1050 1920 1057 </string>
+	<string>0 0 958 1057 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>247 132 570 452 0 0 1920 1177 </string>
 	<key>New Bookmarks</key>
@@ -695,7 +695,7 @@
 					<key>partial</key>
 					<false/>
 					<key>regex</key>
-					<string>(?=\w*(fail|Error|warning)(?![.\\\/]))([\w:\s]+)$</string>
+					<string>(?=\w*((?i)fail|error|panic|fatal)(?![.\\\/]))([^.\\\/]+)$</string>
 				</dict>
 				<dict>
 					<key>action</key>
@@ -703,7 +703,7 @@
 					<key>partial</key>
 					<false/>
 					<key>regex</key>
-					<string>fail|Error</string>
+					<string>(?i)fail|error|panic|fatal</string>
 				</dict>
 				<dict>
 					<key>action</key>
@@ -2588,6 +2588,8 @@
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
+	<key>NoSyncPermissionToShowTip</key>
+	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>554923602.39488697</real>
 	<key>OpenArrangementAtStartup</key>
@@ -2642,7 +2644,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-08-03T17:50:51Z</date>
+	<date>2018-08-07T13:30:53Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>

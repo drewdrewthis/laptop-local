@@ -106,8 +106,3 @@ source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Z
 . `brew --prefix`/etc/profile.d/z.sh
-
-## Environment Variables
-
-# added by picobox
-source ~/.picobox/extensions.bash
