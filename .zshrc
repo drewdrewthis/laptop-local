@@ -79,17 +79,22 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Example aliases
 
+alias aptible="/usr/local/bin/aptible"
 alias brails="bundle exec rails"
 alias besp="bundle exec rspec" 
 
 alias rubochop="git diff origin/master --name-only | xargs rubocop -a"
 
-alias oz="vim ~/.zshrc && source ~/.zshrc && echo 'Yes! You did it :)'"
+export LAPTOP_PATH=~/workspace/laptop-local
+
+alias oz="vim $LAPTOP_PATH/.zshrc && sh $LAPTOP_PATH/cp_configs.sh && source ~/.zshrc && echo 'Yes! You did it :)'"
 alias ozsource="source ~/.zshrc"
 alias hsplit="osascript -e 'tell application \"System Events\" to key code 2 using {shift down, command down}'"
 alias vsplit="osascript -e 'tell application \"System Events\" to key code 2 using {shift down, command down}'"
 
 alias zshrc="oz"
+alias vimrc="vim ~/.vimrc && vim +PluginInstall +qall"
+alias vimrclocal="vim $LAPTOP_PATH/.vimrc.local && sh $LAPTOP_PATH/cp_configs.sh && echo 'Yes! You did it :)'"
 
 alias ngrok="~/ngrok" 
 

@@ -2,11 +2,13 @@
 
 set -e
 
+LAPTOP_PATH=~/workspace/laptop-local
+
 echo "Copying zshrc to ~/.zshrc"
-cp zshrc ~/.zshrc
+cp $LAPTOP_PATH/.zshrc ~/.zshrc
 
 echo "Copying laptop-local to ~/.laptop-local"
-cp laptop-local ~/.laptop.local
+cp $LAPTOP_PATH/.laptop.local ~/.laptop.local
 
 echo "Copying .vimrc.local to ~/.vimrc.local"
-cp .vimrc.local ~/.vimrc.local
+cp $LAPTOP_PATH/.vimrc.local ~/.vimrc.local
