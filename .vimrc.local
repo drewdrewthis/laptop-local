@@ -18,6 +18,7 @@ let NERDTreeShowHidden=1
 
 " Mappings ------- {{{
 let g:AutoPairsShortcutBackInsert = '∫' " <m-b>
+inoremap cl<tab> console.log('debug', )<left><c-r>
 inoremap jk <esc>
 nnoremap + ddkP
 nnoremap - ddp

@@ -1,0 +1,26 @@
+alias aptible="/usr/local/bin/aptible"
+alias brails="bundle exec rails"
+alias besp="bundle exec rspec" 
+
+alias rubochop="git diff HEAD^ --name-only | xargs bundle exec rubocop -a"
+
+export LAPTOP_PATH=~/workspace/laptop-local
+
+alias oz="vim $LAPTOP_PATH/.zshrc-base && sh $LAPTOP_PATH/cp_configs.sh && source ~/.zshrc && echo 'Yes! You did it :)'"
+alias ozsource="source ~/.zshrc"
+alias hsplit="osascript -e 'tell application \"System Events\" to key code 2 using {shift down, command down}'"
+alias vsplit="osascript -e 'tell application \"System Events\" to key code 2 using {shift down, command down}'"
+
+alias zshrc="oz"
+alias vimrc="vim ~/.vimrc && vim +PluginInstall +qall"
+alias vimrclocal="vim $LAPTOP_PATH/.vimrc.local && sh $LAPTOP_PATH/cp_configs.sh && echo 'Yes! You did it :)'"
+alias killrails="ps aux | grep rails | grep -v grep | awk '{print $2}' | xargs kill -9"
+alias killnode="ps aux | grep node | grep -v grep | awk '{print $2}' | xargs kill -9"
+alias killport='f() { lsof -i tcp:$1 -t | xargs kill -9 };f';
+
+alias gconfig="git config --global --edit"
+
+alias ngrok="~/ngrok" 
+
+# Syntax Highlighting
+source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
