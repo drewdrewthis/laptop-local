@@ -5,6 +5,8 @@ cask_install_or_upgrade '1password'
 cask_install_or_upgrade 'skitch'
 cask_install_or_upgrade 'whatsapp'
 cask_install_or_upgrade 'spotify'
+cask_install_or_upgrade 'docker'
+cask_install_or_upgrade 'docker-compose'
 
 # Configure git aliases
 git config --global alias.kick "!git fetch && git rebase origin/master"
@@ -29,4 +31,5 @@ git clone https://github.com/paulirish/git-open.git ~/.oh-my-zsh/custom/plugins/
 git config --global alias.o "open"
 
 # Fast key repeat
-defaults write -g KeyRepeat -int 1
+# https://hints.macworld.com/article.php?story=20090823193018149
+defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)

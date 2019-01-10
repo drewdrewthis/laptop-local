@@ -271,7 +271,7 @@ brew_install_or_upgrade 'watchman'
 
 brew_tap 'homebrew/cask'
 cask_install_or_upgrade 'phantomjs'
-cask_install_or_upgrade 'chromedriver'
+# cask_install_or_upgrade 'chromedriver'
 install_elasticsearch
 # install_qt55
 
