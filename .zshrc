@@ -97,7 +97,7 @@ alias vimrc="vim ~/.vimrc && vim +PluginInstall +qall"
 alias vimrclocal="vim $LAPTOP_PATH/.vimrc.local && sh $LAPTOP_PATH/cp_configs.sh && echo 'Yes! You did it :)'"
 
 alias gconfig="git global --config --edit"
-alias rb='nocorrect rb'
+alias rb='nocorrect rebase'
 
 alias ngrok="~/ngrok" 
 

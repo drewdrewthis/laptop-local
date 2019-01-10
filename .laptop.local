@@ -4,6 +4,7 @@ cask_install_or_upgrade 'visual-studio-code'
 cask_install_or_upgrade '1password'
 cask_install_or_upgrade 'skitch'
 cask_install_or_upgrade 'whatsapp'
+cask_install_or_upgrade 'spotify'
 
 # Configure git aliases
 git config --global alias.kick "!git fetch && git rebase origin/master"
