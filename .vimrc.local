@@ -3,6 +3,7 @@ set nofoldenable
 
 set cursorline
 set cursorcolumn
+set encoding=utf-8
 set gfn=Menlo:h11
 
 colorscheme Benokai
