@@ -7,7 +7,7 @@ Custom local script to work with https://github.com/thoughtbot/laptop
 `git clone https://github.com/drewdrewthis/laptop-local.git ~/workspace/` 
 
 - Download the script:
-`curl --remote-name https://raw.githubusercontent.com/policygenius/laptop/master/mac.sh`
+`curl --remote-name https://raw.githubusercontent.com/policygenius/laptop/master/mac.sh ~/workspace/laptop-local`
 
 - Edit the files!!!!
 
