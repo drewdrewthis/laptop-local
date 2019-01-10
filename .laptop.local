@@ -26,6 +26,7 @@ dockutil --remove Safari
 
 # Add git-open
 git clone https://github.com/paulirish/git-open.git ~/.oh-my-zsh/custom/plugins/git-open
+git config --global alias.o "open"
 
 # Fast key repeat
 defaults write -g KeyRepeat -int 1
