@@ -30,6 +30,10 @@ dockutil --remove Safari
 git clone https://github.com/paulirish/git-open.git ~/.oh-my-zsh/custom/plugins/git-open
 git config --global alias.o "open"
 
+# Add git-branch-select
+yarn global add git-branch-select
+git config --global alias.bri "branch-select"
+
 # Fast key repeat
 # https://hints.macworld.com/article.php?story=20090823193018149
 defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
