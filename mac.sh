@@ -138,7 +138,7 @@ install_or_update_homebrew() {
 
 install_latest_ruby() {
   append_to_zshrc 'eval "$(rbenv init - zsh --no-rehash)"' 1
-  ruby_version="2.3.4"
+  ruby_version="2.5.1"
   eval "$(rbenv init - zsh)"
 
   if ! rbenv versions | grep -Fq "$ruby_version"; then

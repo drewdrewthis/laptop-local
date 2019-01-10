@@ -80,8 +80,8 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # Example aliases
 
 alias aptible="/usr/local/bin/aptible"
-alias brails="bundle exec rails"
-alias besp="bundle exec rspec" 
+alias be="bundle exec"
+alias ber="bundle exec rails"
 
 alias rubochop="git diff origin/master --name-only | xargs rubocop -a"
 
