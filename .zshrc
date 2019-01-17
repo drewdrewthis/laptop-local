@@ -94,8 +94,10 @@ alias hsplit="osascript -e 'tell application \"System Events\" to key code 2 usi
 alias vsplit="osascript -e 'tell application \"System Events\" to key code 2 using {shift down, command down}'"
 
 alias zshrc="oz"
-alias vimrc="vim ~/.vimrc && vim +PluginInstall +qall"
-alias vimrclocal="vim $LAPTOP_PATH/.vimrc.local && sh $LAPTOP_PATH/cp_configs.sh && echo 'Yes! You did it :)'"
+
+COPY_FINISH="sh $LAPTOP_PATH/cp_configs.sh && echo 'Yes! You did it :)'"
+alias vimrc="vim ~/.vimrc && vim +PluginInstall +qall && $COPY_FINISH"
+alias vimrclocal="vim $LAPTOP_PATH/.vimrc.local && $COPY_FINISH"
 
 # Git aliases
 alias gconfig="git global --config --edit"
