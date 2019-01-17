@@ -51,6 +51,8 @@ endfunction
 " Abbreviations ------- {{{
 iabbrev funciton function
 iabbrev fucniton function
+iabbrev reponse response
+iabbrev Reponse Response
 " " }}}
 " Ruby abbeviations ------- {{{
 augroup filetype_ruby

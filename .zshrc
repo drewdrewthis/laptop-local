@@ -77,15 +77,16 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+export LAPTOP_PATH=~/workspace/laptop-local
+
 # Example aliases
 
-alias aptible="/usr/local/bin/aptible"
-alias be="bundle exec"
+# Rails aliases
+# alias aptible="/usr/local/bin/aptible"
+alias -g be="bundle exec"
 alias ber="bundle exec rails"
-
+alias brails="bundle exec rails"
 alias rubochop="git diff origin/master --name-only | xargs rubocop -a"
-
-export LAPTOP_PATH=~/workspace/laptop-local
 
 alias oz="vim $LAPTOP_PATH/.zshrc && sh $LAPTOP_PATH/cp_configs.sh && source ~/.zshrc && echo 'Yes! You did it :)'"
 alias ozsource="source ~/.zshrc"
@@ -96,9 +97,25 @@ alias zshrc="oz"
 alias vimrc="vim ~/.vimrc && vim +PluginInstall +qall"
 alias vimrclocal="vim $LAPTOP_PATH/.vimrc.local && sh $LAPTOP_PATH/cp_configs.sh && echo 'Yes! You did it :)'"
 
+# Git aliases
 alias gconfig="git global --config --edit"
-alias rb='nocorrect rebase'
-alias rspec='nocorrect rspec'
+alias -g rb='nocorrect rebase'
+alias -g rspec='nocorrect rspec'
+
+# Docker-compose aliases
+alias dex='docker-compose exec'
+alias dex-dev='docker-compose exec dev'
+alias dex-test='docker-compose exec test'
+alias dex-dev-rails='docker-compose exec dev bundle exec rails'
+alias dex-live-test='docker-compose exec test_live_debug bundle exec rspec'
+
+function open-pr() {
+  BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+
+  open "https://github.com/ArizenHQ/coinhouse/pull/$BRANCH"
+}
+
+alias gop="open-pr"
 
 alias ngrok="~/ngrok" 
 
