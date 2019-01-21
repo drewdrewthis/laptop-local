@@ -102,7 +102,6 @@ alias vimrclocal="vim $LAPTOP_PATH/.vimrc.local && $COPY_FINISH"
 # Git aliases
 alias gconfig="git global --config --edit"
 alias -g rb='nocorrect rebase'
-alias -g rspec='nocorrect rspec'
 
 # Docker-compose aliases
 alias dex='docker-compose exec'
@@ -111,7 +110,7 @@ alias dex-test='docker-compose exec test'
 alias dex-dev-rails='docker-compose exec dev bundle exec rails'
 alias dex-live-test='docker-compose exec test_live_debug bundle exec rspec'
 
-function open-pr() {
+function openpr() {
   BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 
   open "https://github.com/ArizenHQ/coinhouse/pull/$BRANCH"
