@@ -16,6 +16,7 @@ git config --global alias.aliases "!git config -l | grep alias | cut -c 7-"
 git config --global alias.poosh "push --set-upstream origin HEAD"
 git config --global alias.afp "!git commit -a --amend --no-edit --no-verify && git push -f --no-verify && echo '\n\nDid you lint/test?'"
 git config --global alias.c "config --global --edit"
+git config --global alias.bri "branch-select"
 
 # Remove Items from the dock
 dockutil --remove iTunes
