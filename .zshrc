@@ -102,8 +102,10 @@ alias vimrclocal="vim $LAPTOP_PATH/.vimrc.local && $COPY_FINISH"
 # Git aliases
 alias gconfig="git global --config --edit"
 alias -g rb='nocorrect rebase'
+alias -g be='bundle exec'
 
 # Docker-compose aliases
+alias dc='docker-compose'
 alias dex='docker-compose exec'
 alias dex-dev='docker-compose exec dev'
 alias dex-test='docker-compose exec test'
