@@ -112,7 +112,9 @@ alias dex-test='docker-compose exec test'
 alias dex-dev-rails='docker-compose exec dev bundle exec rails'
 alias dex-live-test='docker-compose exec test_live_debug bundle exec rspec'
 
-function openpr() {
+alias mygrep="grep -B 3 -A 3"
+
+function opr() {
   BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 
   open "https://github.com/ArizenHQ/coinhouse/pull/$BRANCH"
