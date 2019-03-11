@@ -268,6 +268,7 @@ brew_install_or_upgrade 'libyaml'
 brew_install_or_upgrade 'httpie'
 brew_install_or_upgrade 'z'
 brew_install_or_upgrade 'watchman'
+brew_install_or_upgrade 'jq'
 
 brew_tap 'homebrew/cask'
 cask_install_or_upgrade 'phantomjs'
