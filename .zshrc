@@ -100,7 +100,7 @@ alias vimrc="vim ~/.vimrc && vim +PluginInstall +qall && $COPY_FINISH"
 alias vimrclocal="vim $LAPTOP_PATH/.vimrc.local && $COPY_FINISH"
 
 # Git aliases
-alias gconfig="git global --config --edit"
+alias gconfig="git config --global --edit"
 alias -g rb='nocorrect rebase'
 alias -g be='bundle exec'
 
