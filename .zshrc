@@ -18,10 +18,8 @@ ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
-
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
-
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true" 
 # Uncomment the following line to disable auto-setting terminal title.
@@ -53,6 +51,9 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git git-open)
 
 source $ZSH/oh-my-zsh.sh
+
+
+export PATH=~/workspace/grin/grin:$PATH
 
 # User configuration
 
@@ -88,12 +89,12 @@ alias ber="bundle exec rails"
 alias brails="bundle exec rails"
 alias rubochop="git diff origin/master --name-only | xargs rubocop -a"
 
-alias oz="vim $LAPTOP_PATH/.zshrc && sh $LAPTOP_PATH/cp_configs.sh && source ~/.zshrc && echo 'Yes! You did it :)'"
+alias zconf="vim $LAPTOP_PATH/.zshrc && sh $LAPTOP_PATH/cp_configs.sh && source ~/.zshrc && echo 'Yes! You did it :)'"
 alias ozsource="source ~/.zshrc"
 alias hsplit="osascript -e 'tell application \"System Events\" to key code 2 using {shift down, command down}'"
 alias vsplit="osascript -e 'tell application \"System Events\" to key code 2 using {shift down, command down}'"
 
-alias zshrc="oz"
+alias zshrc="zconf"
 
 COPY_FINISH="sh $LAPTOP_PATH/cp_configs.sh && echo 'Yes! You did it :)'"
 alias vimrc="vim ~/.vimrc && vim +PluginInstall +qall && $COPY_FINISH"
@@ -105,12 +106,14 @@ alias -g rb='nocorrect rebase'
 alias -g be='bundle exec'
 
 # Docker-compose aliases
-alias dc='docker-compose'
-alias dex='docker-compose exec'
-alias dex-dev='docker-compose exec dev'
-alias dex-test='docker-compose exec test'
-alias dex-dev-rails='docker-compose exec dev bundle exec rails'
-alias dex-live-test='docker-compose exec test_live_debug bundle exec rspec'
+alias dc='docker compose'
+alias dex='dc exec'
+alias dex-dev='dc exec dev'
+alias dex-test='dc exec test'
+alias dex-rspec='dc exec test be rspec'
+alias dex-dev-rails='dc exec dev bundle exec rails'
+alias dex-live-test='dc exec test_live_debug bundle exec rspec'
+alias dss='docker-sync-stack'
 
 alias mygrep="grep -B 3 -A 3"
 
@@ -118,6 +121,13 @@ function opr() {
   BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 
   open "https://github.com/ArizenHQ/coinhouse/pull/$BRANCH"
+}
+
+function opt() {
+  BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+  ID="$(echo $BRANCH | cut -f1 -d "-")"
+
+  open "https://www.pivotaltracker.com/n/projects/2151981/stories/$ID"
 }
 
 alias gop="open-pr"
@@ -132,3 +142,26 @@ source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Z
 . `brew --prefix`/etc/profile.d/z.sh
+
+# If command execution time above min. time, plugins will not output time.
+ZSH_COMMAND_TIME_MIN_SECONDS=0.5
+
+# Message to display (set to "" for disable).
+ZSH_COMMAND_TIME_MSG="Execution time: %s sec"
+
+# Message color.
+ZSH_COMMAND_TIME_COLOR="cyan"
+
+# Custome env stuff
+export AUTO_LINT=true
+# export AUTO_TRANSLATE=true
+#
+export DRONE_SERVER=https://ci.comptoirdubitcoin.com
+export DRONE_TOKEN=rBly9yfhoohEz57IMqIl4atxRPbLnMTQ
+#
+if [ -z "${coinhouse##*$PWD*}" ]; then
+  echo "Adding Coinhouse cli 'cnhs'..."
+  source '.coinhouse-cli'
+else
+  echo "Doesn't seem like you're in a coinhouse directory. Can't add the coinhouse-cli"
+fi
